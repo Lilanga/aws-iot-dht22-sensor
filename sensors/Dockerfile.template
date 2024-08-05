@@ -1,0 +1,15 @@
+FROM balenalib/%%BALENA_ARCH%%-alpine-golang:latest-build as builder
+
+RUN apk add git
+WORKDIR /build
+COPY . .
+RUN go mod download
+RUN go build -o weather-service .
+
+FROM balenalib/%%BALENA_ARCH%%-alpine-golang:latest-run
+WORKDIR /app
+COPY --from=builder /build/weather-service .
+COPY ./cert /app/cert
+
+# command to run on container start
+CMD [ "./weather-service" ]

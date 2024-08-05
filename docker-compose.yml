@@ -1,0 +1,8 @@
+version: '2'
+services:
+  sensors:
+    build: sensors
+    network_mode: host
+    privileged: true
+    expose:
+      - "80"
