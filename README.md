@@ -1,6 +1,6 @@
 # Reading DHT22 Sensor with Raspberry Pi on BalenaOS
 
-This repository contains a Go application for reading DHT22 sensor data using a Raspberry Pi Zero running BalenaOS. The application reads temperature, humidity, and pressure data, and publishes it via MQTT while also serving a simple web page to display the current sensor data.
+This repository contains a Go application for reading DHT22 sensor data using a Raspberry Pi Zero running BalenaOS. The application reads temperature, humidity, and pressure data, and publishes it via MQTT.
 
 ## Table of Contents
 
@@ -18,7 +18,7 @@ This repository contains a Go application for reading DHT22 sensor data using a 
 ## Requirements
 
 - Raspberry Pi with BalenaOS
-- Rainbow HAT
+- DHT22 Module
 - Go 1.18+
 - Configured AWS IoT Core broker
 - `.env` file with necessary configurations
